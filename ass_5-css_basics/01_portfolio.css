@@ -1,0 +1,81 @@
+/* Fixed header and flex layout keep the footer at the bottom. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+    color: #172554;
+}
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    min-height: 70px;
+    padding: 1rem 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #172554;
+    color: white;
+}
+.site-header h1 { margin: 0; font-size: 1.5rem; }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2em;
+}
+main { flex: 1; padding-top: 70px; }
+.hero {
+    min-height: 70vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5%;
+}
+.hero div { width: 50%; }
+.hero h2 { font-size: 2.5rem; }
+.hero p { font-size: 1.1rem; line-height: 1.7; }
+.hero img {
+    width: 30%;
+    max-width: 300px;
+    border-radius: 50%;
+    border: 6px solid #4f46e5;
+}
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #4f46e5;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.about, .contact {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    min-height: 20vh;
+    background: white;
+    border-radius: 10px;
+}
+.about h2, .contact h2 { font-size: 2rem; }
+footer {
+    padding: 1.2rem;
+    text-align: center;
+    background: #172554;
+    color: white;
+}
+@media (max-width: 600px) {
+    .site-header { flex-direction: column; gap: 0.5rem; }
+    .hero { flex-direction: column; padding-top: 2rem; }
+    .hero div, .hero img { width: 90%; }
+}
